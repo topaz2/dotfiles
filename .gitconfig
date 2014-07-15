@@ -7,3 +7,4 @@
 	insteadOf = git://
 [core]
 	mergeoptions = --no-edit
+	excludesfile = ~/.gitignore
