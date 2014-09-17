@@ -63,9 +63,9 @@ function ha()
 function ds()
 {
   if [ -z $1 ]; then
-    dirs -v | sed 's/\t/: /g'
+    dirs -v | perl -pe 's/\t/: /g'
   else
-    dirs -v | sed 's/\t/: /g' | grep $1
+    dirs -v | perl -pe 's/\t/: /g' | grep $1
   fi
 
   echo -n "select number: "
