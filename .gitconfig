@@ -8,3 +8,5 @@
 [core]
 	mergeoptions = --no-edit
 	excludesfile = ~/.gitignore
+[push]
+	default = simple
