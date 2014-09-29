@@ -4,8 +4,13 @@ path=(
   # for mac
   /opt/local/bin /opt/local/sbin \
 )
+uname=`uname -a`
+if [ "$uname" = "Darwin" ]; then
+  PATH=$(brew --prefix ruby)/bin:$PATH
+fi
 
 umask 002
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && `$HOME/.rvm/scripts/rvm`
 
 if [ -x "`which emacs`" ]; then
     export EDITOR=emacs
@@ -18,8 +23,6 @@ fi
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export RSYNC_RSH=ssh
-export CVS_RSH=ssh
-export CVSROOT=:ext:`whoami`@topaz2.dyndns.org:/CVSROOT
 export HOSTNAME=`hostname`
 export HOSTNAME_S=`hostname -s`
 export XIM_PROGRAM=/usr/bin/ibus-daemon
@@ -42,6 +45,7 @@ elif which less >& /dev/null ;  then
 else
   export PAGER="more -x2"
 fi
+export WORDCHARS="*?_-.[]~=&!#$%^(){}<>"
 
 alias a='alias'
 a ap='aptitude'
@@ -49,6 +53,7 @@ a l='ls -alF'
 a ls='ls -F'
 a ll='ls -alF'
 a ltr='ls -altrF'
+a make="make -j `ohai cpu/total`"
 a f='find'
 a g='egrep'
 a c='cat'
@@ -56,14 +61,7 @@ a cpr='cp -rp'
 a e='emacs -nw'
 a emacs='emacs -nw'
 a d='dig'
-uname=`uname -a`
-if [ ! -z "`echo $uname | grep Ubuntu`" ]; then
-    a o='gnome-open'
-else
-    a o='open'
-fi
-
-a p='ps aux'
+a ps='ps auxw'
 a pi='ping'
 a rf='rm -rf'
 a t='top'
@@ -82,4 +80,8 @@ a sag='ssh-agent'
 a sa='ssh-add'
 a screen="screen -U -t $HOSTNAME_S"
 a yui='java -jar /usr/local/src/yuicompressor-2.3.5/build/yuicompressor-2.3.5.jar -v'
-
+if [ "$uname" = "Ubuntu" ]; then
+    a o='gnome-open'
+else
+    a o='open'
+fi
