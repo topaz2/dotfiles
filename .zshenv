@@ -1,23 +1,23 @@
 path=(
   ~/bin ~/local/bin bin ~/usr/local/bin \
   /bin /sbin /usr/local/bin /usr/bin /usr/sbin \
-  # for mac
-  /opt/local/bin /opt/local/sbin \
 )
-uname=`uname -a`
+uname=`uname`
 if [ "$uname" = "Darwin" ]; then
+  PATH=/opt/local/bin:/opt/local/sbin:$PATH
   PATH=$(brew --prefix ruby)/bin:$PATH
+  ulimit -n 4096
 fi
 
 umask 002
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && `$HOME/.rvm/scripts/rvm`
 
 if [ -x "`which emacs`" ]; then
-    export EDITOR=emacs
-    export CVSEDITOR=emacs
+  export EDITOR=emacs
+  export CVSEDITOR=emacs
 elif [ -x "`which vim`" ]; then
-    export EDITOR=vim
-    export CVSEDITOR=vim
+  export EDITOR=vim
+  export CVSEDITOR=vim
 fi
 
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -81,7 +81,7 @@ a sa='ssh-add'
 a screen="screen -U -t $HOSTNAME_S"
 a yui='java -jar /usr/local/src/yuicompressor-2.3.5/build/yuicompressor-2.3.5.jar -v'
 if [ "$uname" = "Ubuntu" ]; then
-    a o='gnome-open'
+  a o='gnome-open'
 else
-    a o='open'
+  a o='open'
 fi
