@@ -1,0 +1,12 @@
+[user]
+	name = topaz2
+	email = topaz2.3333@gmail.com
+[credential]
+	helper = cache --timeout 315360000
+[url "https://"]
+	insteadOf = git://
+[core]
+	mergeoptions = --no-edit
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
