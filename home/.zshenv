@@ -5,12 +5,15 @@ path=(
 uname=`uname`
 if [ "$uname" = "Darwin" ]; then
   PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  PATH=$(brew --prefix ruby)/bin:$PATH
+  # Workaround osx does not respect /etc/profile
+  # @see http://hints.macworld.com/article.php?story=20011221192012445
+  for PROFILE_SCRIPT in $( /bin/ls /etc/profile.d/*.sh ); do
+    . $PROFILE_SCRIPT
+  done
   ulimit -n 4096
 fi
 
 umask 002
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && `$HOME/.rvm/scripts/rvm`
 
 if [ -x "`which emacs`" ]; then
   export EDITOR=emacs
