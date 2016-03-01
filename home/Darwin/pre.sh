@@ -10,7 +10,7 @@ brew install \
      s3cmd svn transmission tree \
      w3m wget homebrew/php/php55
 brew cask install \
-     chefdk karabiner keepassx mono-mdk \
+     chefdk dropbox karabiner keepassx mono-mdk \
      gimp google-chrome google-drive google-japanese-ime \
      mysqlworkbench \
      packer seil vagrant virtualbox
