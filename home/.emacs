@@ -118,23 +118,6 @@
              indent-tabs-mode nil)
        ))
 
-;; iswitchb
-(iswitchb-mode 1)
-(defadvice iswitchb-exhibit
-  (after
-   iswitchb-exhibit-with-display-buffer
-   activate)
-  "show buffer"
-  (when (and
-         (eq iswitchb-method iswitchb-default-method)
-         iswitchb-matches)
-    (select-window
-     (get-buffer-window (cadr (buffer-list))))
-    (let ((iswitchb-method 'samewindow))
-      (iswitchb-visit-buffer
-       (get-buffer (car iswitchb-matches))))
-    (select-window (minibuffer-window))))
-
 (eval-when-compile
   (require 'flyspell)
   (require 'ispell))
