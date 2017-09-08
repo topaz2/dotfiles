@@ -6,3 +6,4 @@ GRTAGS
 GTAGS
 GPATH
 .DS_Store
+*.elc

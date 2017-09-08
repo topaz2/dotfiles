@@ -21,12 +21,10 @@
   (require 'ruby-block)
   (ruby-block-mode t)
   (setq ruby-block-highlight-toggle t)
-
-  (require 'ruby-electric)
+  (setq ruby-insert-encoding-magic-comment nil)
   (require 'ruby-end)
 )
 
-(add-hook 'ruby-mode-hook 'ruby-electric-mode)
 (add-hook 'ruby-mode-hook 'ruby-mode-settings)
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
@@ -42,3 +40,15 @@
              (add-to-list 'ac-sources 'ac-source-rsense-method)
              (add-to-list 'ac-sources 'ac-source-rsense-constant)
              (define-key ruby-mode-map (kbd "C-x .") 'ac-complete-rsense)))
+
+;; ;; add frozen_string_literal
+;; (defun ruby-mode-set-frozen-string-literal-true ()
+;;   (when (eq major-mode 'ruby-mode)
+;;     (save-excursion
+;;       (widen)
+;;       (goto-char (point-min))
+;;       (unless (looking-at "^# frozen_string_literal: true")
+;;         (insert "# frozen_string_literal: true\n\n")))))
+
+;; (add-hook 'ruby-mode-hook (lambda()
+;;                             (add-hook 'before-save-hook 'ruby-mode-set-frozen-string-literal-true)))

@@ -95,6 +95,11 @@
 (setq show-paren-style 'parenthesis)
 (show-paren-mode +1)
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-selection ((t (:underline t))))
  '(show-paren-match ((t (:background "DodgerBlue4")))))
 
 ;; Set mode
@@ -177,3 +182,11 @@
      (shell-command (concat "touch " (shell-quote-argument (buffer-file-name))))
      (clear-visited-file-modtime))
 (global-set-key (kbd "C-c C-t") 'touch)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (typescript-mode yasnippet yaml-mode w3m vagrant twittering-mode tumble ruby-end ruby-electric ruby-block rspec-mode rsense rinari puppet-mode psvn pos-tip php-extras multi-web-mode mew markdown-mode magit js3-mode inf-php highlight-parentheses helm-rubygems-local helm-rb helm-rails helm-gtags helm-flymake helm-dired-recent-dirs helm-delicious google-translate google-maps google-c-style git-rebase-mode git-commit-mode geben fuzzy flymake-yaml flymake-shell flymake-ruby flymake-puppet flymake-php flymake-json flymake-jshint flymake-cursor flymake facemenu+ elscreen elmine ctags color-theme-solarized auto-compile android-mode ac-js2 ac-ja ac-ispell ac-helm ac-etags ac-dabbrev ac-c-headers))))
