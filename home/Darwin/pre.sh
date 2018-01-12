@@ -11,9 +11,11 @@ brew install \
      w3m wget homebrew/php/php55
 brew cask install \
      chefdk dropbox karabiner keepassx mono-mdk \
-     gimp google-chrome google-drive google-japanese-ime \
+     gimp google-chrome google-drive-file-stream google-japanese-ime \
      mysqlworkbench \
-     packer seil vagrant virtualbox
+     seil \
+     virtualbox docker docker-compose
+brew link docker docker-compose
 Darwin/karabiner-import.sh
 Darwin/seil-import.sh
 sudo systemsetup -setremotelogin on
