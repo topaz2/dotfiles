@@ -7,14 +7,15 @@ brew install \
      ispell lv libffi mysql nkf nodejs \
      pbzip2 postgresql python \
      rbenv ruby ruby-build \
-     s3cmd svn transmission tree \
+     awscli \
+     transmission tree \
      w3m wget homebrew/php/php55
 brew cask install \
-     chefdk dropbox karabiner keepassx mono-mdk \
+     chefdk dropbox keepassx mono-mdk \
      gimp google-chrome google-drive-file-stream google-japanese-ime \
+     karabiner-elements seil \
      mysqlworkbench \
-     seil \
-     virtualbox docker docker-compose
+     virtualbox virtualbox-extension-pack docker docker-compose
 brew link docker docker-compose
 Darwin/karabiner-import.sh
 Darwin/seil-import.sh
