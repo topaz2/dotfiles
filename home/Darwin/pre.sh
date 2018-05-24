@@ -4,7 +4,7 @@ brew install \
      aircrack-ng axel brew-gem colordiff ctags \
      emacs \
      global --with-exuberant-ctags --with-pygments \
-     ispell lv libffi mysql nkf nodejs \
+     ispell lv screen libffi mysql nkf nodejs \
      pbzip2 postgresql python \
      rbenv ruby ruby-build \
      s3cmd svn transmission tree \

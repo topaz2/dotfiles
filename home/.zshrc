@@ -110,6 +110,9 @@ if [ `uname` = "FreeBSD" ]; then
 elif [ `uname` = "Darwin" ]; then
   alias ls='ls -GF'
   alias ll='ls -alGF'
+  # Disable Ctrl-S reservation
+  # @see http://dallarosa.tumblr.com/post/31333511717/commandt-and-ctrl-s-on-mac-os-x
+  stty -ixon -ixoff
 else
   alias ls='ls -F --color=auto'
   alias ll='ls -alF --color=auto'

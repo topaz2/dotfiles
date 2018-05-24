@@ -34,6 +34,7 @@ hardstatus alwayslastline "[%y/%m/%d(%D) %02c] %`%-w%{=b bw}%n %t%{-}%+w"
 
 # Split window like emacs
 bind -c X 2 split
+bind -c X 5 split -v
 bind -c X o focus
 bind -c X 1 only
 bind -c X 0 remove
