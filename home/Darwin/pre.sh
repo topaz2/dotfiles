@@ -1,21 +1,25 @@
 #!/bin/zsh
 
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
-     aircrack-ng axel brew-gem colordiff ctags \
+     aircrack-ng awscli axel \
+     brew-gem colordiff ctags \
+     docker docker-compose \
      emacs \
      global --with-exuberant-ctags --with-pygments \
      ispell lv screen libffi mysql nkf nodejs \
      pbzip2 postgresql python \
      rbenv ruby ruby-build \
-     awscli \
      transmission tree \
-     w3m wget homebrew/php/php55
+     w3m wget
 brew cask install \
-     chefdk dropbox keepassx mono-mdk \
+     dropbox docker \
+     keepassx mono-mdk \
      gimp google-chrome google-drive-file-stream google-japanese-ime \
      karabiner-elements seil \
      mysqlworkbench \
-     virtualbox virtualbox-extension-pack docker docker-compose
+     slack \
+     virtualbox virtualbox-extension-pack
 brew link docker docker-compose
 Darwin/karabiner-import.sh
 Darwin/seil-import.sh
