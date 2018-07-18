@@ -21,6 +21,4 @@ brew cask install \
      slack \
      virtualbox virtualbox-extension-pack
 brew link docker docker-compose
-Darwin/karabiner-import.sh
-Darwin/seil-import.sh
 sudo systemsetup -setremotelogin on
