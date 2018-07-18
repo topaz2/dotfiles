@@ -1,0 +1,21 @@
+aircrack-ng
+awscli
+axel
+brew-gem
+colordiff
+ctags
+docker
+docker-compose
+emacs
+global --with-exuberant-ctags --with-pygments
+ispell
+lv
+nkf
+nodejs
+pbzip2
+ruby
+screen
+transmission
+tree
+w3m
+wget
