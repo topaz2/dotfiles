@@ -89,21 +89,6 @@ function del()
   if [ -f "$f" ]; then find . -inum `ls -i $f | awk '{print $1}'` | xargs rm; fi
 }
 
-function testmail()
-{
-  cat ~/test.mail | sendmail -t -oi
-}
-
-function svn_init()
-{
-  svn add trunk tags branches docs
-}
-
-function say()
-{
-  espeak "$1" --stdout | paplay
-}
-
 if [ `uname` = "FreeBSD" ]; then
   alias ls='ls -GF'
   alias ll='ls -alGF'
@@ -116,6 +101,10 @@ elif [ `uname` = "Darwin" ]; then
 else
   alias ls='ls -F --color=auto'
   alias ll='ls -alF --color=auto'
+  function say()
+  {
+    espeak "$1" --stdout | paplay
+  }
 fi
 
 alias less='lv'

@@ -1,15 +1,11 @@
 path=(
   ~/bin ~/local/bin bin ~/usr/local/bin \
   /bin /sbin /usr/local/bin /usr/bin /usr/sbin \
+  $(python -m site --user-base)/bin
 )
 uname=`uname`
 if [ "$uname" = "Darwin" ]; then
   PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  # Workaround osx does not respect /etc/profile
-  # @see http://hints.macworld.com/article.php?story=20011221192012445
-  for PROFILE_SCRIPT in $( /bin/ls /etc/profile.d/*.sh ); do
-    . $PROFILE_SCRIPT
-  done
   ulimit -n 4096
 fi
 
@@ -56,7 +52,7 @@ a l='ls -alF'
 a ls='ls -F'
 a ll='ls -alF'
 a ltr='ls -altrF'
-a make="make -j `ohai cpu/total`"
+a make="make -j `sysctl hw.ncpu | cut -f 2 -d ' '`"
 a f='find'
 a g='egrep'
 a c='cat'
