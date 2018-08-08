@@ -1,4 +1,21 @@
 ;; Basic settings
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(require 'package)
+(setq package-archives
+      '(("GNU ELPA"     . "http://elpa.gnu.org/packages/")
+        ("MELPA Stable" . "https://stable.melpa.org/packages/")
+        ("MELPA"        . "https://melpa.org/packages/"))
+      package-archive-priorities
+      '(("MELPA Stable" . 10)
+        ("GNU ELPA"     . 5)
+        ("MELPA"        . 0))
+      package-enable-at-startup nil)
+(package-initialize)
+
 (menu-bar-mode 0)
 (setq inhibit-startup-message t
       gc-cons-threshold 8000000
@@ -99,7 +116,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:background "black"))))
+ '(background "black")
  '(helm-selection ((t (:underline t))))
+ '(magit-section-highlight ((t (:background nil))))
  '(show-paren-match ((t (:background "DodgerBlue4")))))
 
 ;; Set mode
@@ -163,25 +183,13 @@
 ;;                                develock-keywords-alist))))
 ;;       ))
 
-(require 'android-mode)
-(require 'gud)
-
-(defun android-mode-settings()
-  (setq android-mode-sdk-dir "~/usr/local/bin/android-sdk-linux")
-  )
-
-(add-hook 'android-mode-hook 'android-mode-settings)
-(add-hook 'gud-mode-hook
-          (lambda ()
-            (add-to-list 'gud-jdb-classpath "~/usr/local/bin/android-sdk-linux/platforms/android-17/android.jar")
-            ))
-
 (defun touch ()
      "updates mtime on the file for the current buffer"
      (interactive)
      (shell-command (concat "touch " (shell-quote-argument (buffer-file-name))))
      (clear-visited-file-modtime))
 (global-set-key (kbd "C-c C-t") 'touch)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -189,4 +197,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (typescript-mode yasnippet yaml-mode w3m vagrant twittering-mode tumble ruby-end ruby-electric ruby-block rspec-mode rsense rinari puppet-mode psvn pos-tip php-extras multi-web-mode mew markdown-mode magit js3-mode inf-php highlight-parentheses helm-rubygems-local helm-rb helm-rails helm-gtags helm-flymake helm-dired-recent-dirs helm-delicious google-translate google-maps google-c-style git-rebase-mode git-commit-mode geben fuzzy flymake-yaml flymake-shell flymake-ruby flymake-puppet flymake-php flymake-json flymake-jshint flymake-cursor flymake facemenu+ elscreen elmine ctags color-theme-solarized auto-compile android-mode ac-js2 ac-ja ac-ispell ac-helm ac-etags ac-dabbrev ac-c-headers))))
+    (init-loader inf-ruby robe typescript-mode yasnippet yaml-mode w3m vagrant twittering-mode tumble ruby-end ruby-electric ruby-block rspec-mode rsense rinari puppet-mode psvn pos-tip php-extras multi-web-mode mew markdown-mode magit js3-mode inf-php highlight-parentheses helm-rubygems-local helm-rb helm-rails helm-gtags helm-flymake helm-dired-recent-dirs google-translate google-maps google-c-style git-rebase-mode git-commit-mode geben fuzzy flymake-yaml flymake-shell flymake-ruby flymake-puppet flymake-php flymake-json flymake-jshint flymake-cursor flymake facemenu+ elscreen elmine ctags color-theme-solarized auto-compile android-mode ac-ja ac-ispell ac-helm ac-etags ac-dabbrev ac-c-headers))))

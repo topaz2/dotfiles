@@ -28,18 +28,21 @@
 (add-hook 'ruby-mode-hook 'ruby-mode-settings)
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (require 'rcodetools)
 (define-key ruby-mode-map (kbd "C-c C-d") 'xmp)
 
 ;; rsense
-(setq rsense-home "/usr/local/src/rsense/0.3/libexec")
-(require 'rsense)
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (add-to-list 'ac-sources 'ac-source-rsense-method)
-             (add-to-list 'ac-sources 'ac-source-rsense-constant)
-             (define-key ruby-mode-map (kbd "C-x .") 'ac-complete-rsense)))
+;; (setq rsense-home "/usr/local/src/rsense/0.3/libexec")
+;; (require 'rsense)
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              (add-to-list 'ac-sources 'ac-source-rsense-method)
+;;              (add-to-list 'ac-sources 'ac-source-rsense-constant)
+;;              (define-key ruby-mode-map (kbd "C-x .") 'ac-complete-rsense)))
 
 ;; ;; add frozen_string_literal
 ;; (defun ruby-mode-set-frozen-string-literal-true ()

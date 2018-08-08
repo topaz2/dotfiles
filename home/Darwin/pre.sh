@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+dirname=$(dirname "$0")
 
-xargs brew install < Brewfile
-xargs brew cask install < Brewfile.cask
+xargs brew install < $dirname/Brewfile
+xargs brew cask install < $dirname/Brewfile.cask
 brew link docker docker-compose
 sudo systemsetup -setremotelogin on

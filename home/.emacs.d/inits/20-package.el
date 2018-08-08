@@ -1,17 +1,10 @@
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/"))
-      package-enable-at-startup nil)
-(package-initialize)
-
 (defvar installing-package-list
   '(
     ac-c-headers
     ac-dabbrev
     ac-etags
     ac-helm
-;;    ac-js2
+    android-mode
     auto-compile
     auto-complete
     ctags
@@ -31,6 +24,9 @@
     flymake-yaml
     fuzzy
     geben
+    google-c-style
+    google-maps
+    google-translate
     helm
     helm-delicious
     helm-dired-recent-dirs
@@ -41,37 +37,33 @@
     helm-rubygems-local
 ;;    hl-line
     inf-php
+    inf-ruby
     jshint
-    magit
-    mew
-    org
-    psvn
-    pos-tip
-    vagrant
-    w3m
-    yasnippet
-
-    android-mode
-    google-c-style
     js3-mode
+    magit
     markdown-mode
-;;    php-auto-yasnippet
+    mew
+    multi-web-mode
+    org
     php-extras
     php-mode
+;;    php-auto-yasnippet
+    psvn
+    pos-tip
     rinari
+    robe
     rspec-mode
     ruby-block
     ruby-mode
     ruby-electric
     ruby-end
-    yaml-mode
-    puppet-mode
-    multi-web-mode
-
-    google-maps
-    google-translate
+    typescript-mode
     tumble
     twitterling-mode
+    vagrant
+    w3m
+    yasnippet
+    yaml-mode
     ))
 (when (not package-archive-contents)
   (package-refresh-contents))
