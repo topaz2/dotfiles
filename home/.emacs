@@ -118,8 +118,18 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:background "black"))))
  '(background "black")
+ '(ediff-current-diff-A ((t (:background "color-233"))))
+ '(ediff-current-diff-B ((t (:background "color-233"))))
+ '(ediff-current-diff-C ((t (:background "color-233"))))
+ '(ediff-even-diff-A ((t (:background "color-233"))))
+ '(ediff-even-diff-B ((t (:background "color-233"))))
+ '(ediff-even-diff-C ((t (:background "color-233"))))
+ '(ediff-odd-diff-A ((t (:background "color-233"))))
+ '(ediff-odd-diff-B ((t (:background "color-233"))))
+ '(ediff-odd-diff-C ((t (:background "color-233"))))
  '(helm-selection ((t (:underline t))))
  '(magit-section-highlight ((t (:background nil))))
+ '(mmm-default-submode-face ((t (:background nil))))
  '(show-paren-match ((t (:background "DodgerBlue4")))))
 
 ;; Set mode
@@ -197,4 +207,5 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (init-loader inf-ruby robe typescript-mode yasnippet yaml-mode w3m vagrant twittering-mode tumble ruby-end ruby-electric ruby-block rspec-mode rsense rinari puppet-mode psvn pos-tip php-extras multi-web-mode mew markdown-mode magit js3-mode inf-php highlight-parentheses helm-rubygems-local helm-rb helm-rails helm-gtags helm-flymake helm-dired-recent-dirs google-translate google-maps google-c-style git-rebase-mode git-commit-mode geben fuzzy flymake-yaml flymake-shell flymake-ruby flymake-puppet flymake-php flymake-json flymake-jshint flymake-cursor flymake facemenu+ elscreen elmine ctags color-theme-solarized auto-compile android-mode ac-ja ac-ispell ac-helm ac-etags ac-dabbrev ac-c-headers))))
+    (init-loader inf-ruby robe typescript-mode yasnippet yaml-mode w3m vagrant twittering-mode tumble ruby-end ruby-electric ruby-block rspec-mode rsense rinari puppet-mode psvn pos-tip php-extras multi-web-mode mew markdown-mode magit js3-mode inf-php highlight-parentheses helm-rubygems-local helm-rb helm-rails helm-gtags helm-flymake helm-dired-recent-dirs google-translate google-maps google-c-style git-rebase-mode git-commit-mode geben fuzzy flymake-yaml flymake-shell flymake-ruby flymake-puppet flymake-php flymake-json flymake-jshint flymake-cursor flymake facemenu+ elscreen elmine ctags color-theme-solarized auto-compile android-mode ac-ja ac-ispell ac-helm ac-etags ac-dabbrev ac-c-headers)))
+
