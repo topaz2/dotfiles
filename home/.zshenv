@@ -84,3 +84,13 @@ if [ "$uname" = "Ubuntu" ]; then
 else
   a o='open'
 fi
+
+export REGISTRY=931243214056.dkr.ecr.ap-northeast-1.amazonaws.com
+export APP_NAME=sirius-api/app
+a db='docker build -t ${APP_NAME}:latest .'
+a dt='docker tag ${APP_NAME}:latest ${REGISTRY}/${APP_NAME}:latest'
+a dp='docker push ${REGISTRY}/${APP_NAME}:latest '
+a dsp='docker system prune -a --volumes'
+a ddf='docker-compose down --remove-orphans -v '
+a du='docker-compose up -d'
+a dl='docker-compose logs -f'
