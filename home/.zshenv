@@ -78,7 +78,6 @@ a -g S='| sed'
 a sag='ssh-agent'
 a sa='ssh-add'
 a screen="screen -U -t $HOSTNAME_S"
-a yui='java -jar /usr/local/src/yuicompressor-2.3.5/build/yuicompressor-2.3.5.jar -v'
 if [ "$uname" = "Ubuntu" ]; then
   a o='gnome-open'
 else
@@ -87,10 +86,11 @@ fi
 
 export REGISTRY=931243214056.dkr.ecr.ap-northeast-1.amazonaws.com
 export APP_NAME=sirius-api/app
+
 a db='docker build -t ${APP_NAME}:latest .'
-a dt='docker tag ${APP_NAME}:latest ${REGISTRY}/${APP_NAME}:latest'
 a dp='docker push ${REGISTRY}/${APP_NAME}:latest'
 a dsp='docker system prune -a --volumes'
-a ddf='docker-compose down --remove-orphans -v '
-a du='docker-compose up -d'
+a dt='docker tag ${APP_NAME}:latest ${REGISTRY}/${APP_NAME}:latest'
+a ddf='docker-compose down --remove-orphans -v'
 a dl='docker-compose logs -f'
+a du='docker-compose up -d'
