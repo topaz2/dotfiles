@@ -3,7 +3,7 @@
 ## Install dependencies
 ### osx
 ```
-su - user -c 'xcode-select --install'
+xcode-select --install
 ```
 
 ## Install
